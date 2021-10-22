@@ -1,8 +1,9 @@
 /* CHALLENGE 1 */
 const checkValues = (obj, value) => {
-    if (Object.values(obj).indexOf(value) > -1) {
+    /*if (Object.values(obj).indexOf(value) > -1) {
         return true;
-    } else return false;
+    } else return false;*/
+    return Object.values(obj).includes(value)
     };
   
 checkValues({name:"ahmed",age:15},15) // => true
@@ -25,8 +26,7 @@ const courseInfo = {
   };
   
 const getCourseKeys = (obj) => {
-    const courseKeys = Object.keys(obj);
-    return courseKeys;
+    return Object.keys(obj);
 };
   
 getCourseKeys(courseInfo)// => ['name', 'duration', 'topics', 'finalExam']
@@ -55,20 +55,12 @@ const updateNumbers = (obj) => {
 
 /* CHALLENGE 4 */
 const PassedOrFailed = function (studentGrades) {
-    
-    /*
-    for (let key in studentGrades) {
-       // if(((studentGrades[key])/(studentGrades[key]))*100 >= 50)
-       return "The student have passed"; 
-    }
-    return "The student have failed";
-    */
 
-    if(((studentGrades.math.grade/studentGrades.math.total)*100) >= 50 &&
-    ((studentGrades.english.grade/studentGrades.english.total)*100) >= 50 &&
-    ((studentGrades.art.grade/studentGrades.art.total)*100) >= 50){
-        return "The student have passed";
-    } else  return "The student have failed";
+    for (let key in studentGrades) {
+        if(studentGrades[key].grade/studentGrades[key].total < 0.5){
+           return "The student have failed";
+         }
+    }  return "The student have passed";    
 };
   
 const studentOne = {
@@ -89,11 +81,14 @@ PassedOrFailed(studentTwo); // =>  "The student have failed"
 
 /* CHALLENGE 5 */
 const totalCharacters = (arr) => {
+    /*
     let charNum = 0;
     for (const element of arr) {
         charNum += element.length;
     }
     return charNum;
+    */
+    return arr.join("").length;
 };
   
 totalCharacters(["abc","yz"]) // => 5
@@ -123,9 +118,7 @@ const uniqueDogs = {
   
   const createDog = function (name, dogBreed, furColor) {
     if ( name in uniqueDogs === false){
-        uniqueDogs['name'];
-        name.breed = dogBreed;
-        name.color = furColor;
+        uniqueDogs[name]= {breed: dogBreed, color: furColor}
         return "Added the dog successfully";
     } else return "The dog isn't unique enough :("
 };
