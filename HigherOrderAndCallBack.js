@@ -21,17 +21,16 @@ addExclamation(["one","two","three"]) // => ["one!","two!","three!"]
 
 /* CHALLENGE 3 */
 const addOneByMap = (arr) => {
-    const newArr = arr.map(item => item + 1);
-    return newArr;
+    return arr.map(item => item + 1);
 };
+
 addOneByMap([1,2,3]) // => [2,3,4]
 addOneByMap([10,11,12]) // => [11,12,13]
 
 
 /* CHALLENGE 4 */
 const addQuestion = (arr) => {
-    const newArr = arr.map(item => item + "?");
-    return newArr;
+    return arr.map(item => item + "?");
 };
   
 addQuestion(["one","two","three"]) // => ["one?","two?","three?"]
@@ -39,11 +38,7 @@ addQuestion(["one","two","three"]) // => ["one?","two?","three?"]
 
 /* CHALLENGE 5 */
 const forLoopTwoToThe = (arr) => {
-    const newArr = [];
-    for (const element of arr) {
-        newArr.push(Math.pow(2, element))
-    }
-    return newArr;
+    return arr.map((item, i) => Math.pow(2, element));
 };
   
 forLoopTwoToThe([1,2,3]) // => [2,4,8]
@@ -51,8 +46,7 @@ forLoopTwoToThe([1,2,3]) // => [2,4,8]
 
 /* CHALLENGE 6 */
 const typeNum = (arr) => {
-    const newArr = arr.filter(item => typeof item == 'number');
-    return newArr;
+    return arr.filter(item => typeof item == 'number');
 };
   
 typeNum([1, 'bob' ,3]) // => [1,3]
@@ -60,22 +54,19 @@ typeNum([1, 'bob' ,3]) // => [1,3]
 
 /* CHALLENGE 7 */
 const containsAnd = (arr) => {
-    const newArr = arr.filter(item => item.includes('and'));
-    return newArr;
+    return arr.filter(item => item.includes('and'));
 };
 
 
 /* CHALLENGE 8 */
 const oddValues = (arr) => {
-    const newArr = arr.filter(item => item%2 != 0);
-    return newArr;
+    return arr.filter(item => item%2 != 0);
 };
   
 
 /* CHALLENGE 9 */
 const addValues = (arr) => {
-    let sum = arr.reduce(( previousValue, currentValue ) => previousValue + currentValue);
-    return sum;
+    return arr.reduce(( previousValue, currentValue ) => previousValue + currentValue);
 };
   
 addValues([1,2,3,4]) // => 10
@@ -84,8 +75,7 @@ addValues([15,10,15,5]) // => 45
 
 /* CHALLENGE 10 */
 const countNumberOfElements = (arr) => {
-    let arrayLength = arr.reduce(acc => acc + 1);
-    return arrayLength;
+    return arr.reduce(acc => acc + 1);
 };
 
 
